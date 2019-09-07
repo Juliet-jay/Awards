@@ -29,3 +29,10 @@ class tagsTestClass(TestCase):
     # Tear down method
     def tearDown(self):
         tags.objects.all().delete()
+        
+     # Testing delete method
+
+    def test_delete_tags(self):
+        self.test_tags.delete()
+        self.assertEqual(len(tags.objects.all()), 0)
+
