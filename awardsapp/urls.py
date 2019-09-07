@@ -3,9 +3,9 @@ from . import views
 # from django.conf.urls.static import static
 # from django.conf import settings
 
-# urlpatterns = [
+urlpatterns = [
 
-#     url(r'^$', views.home_projects, name='homePage'),
+    url(r'^$', views.home_projects, name='homePage'),
 #     # url(r'^search/', views.search_users, name='search_users'),
 #     url(r'^search/', views.search_projects, name='search_projects'),
 #     url(r'^image(\d+)', views.project, name='project'),
@@ -29,7 +29,7 @@ from . import views
 #     #     views.review_detail, name='review_detail'),
 #     # # ex: /project/
 #     # url(r'^project$', views.project_list, name='project_list'),
-# ]
+]
 
 
 # if settings.DEBUG:
