@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 # import numpy as np
-# from django.db.models.signals import post_save
-# from django.db.models import Avg, Max, Min
+from django.db.models.signals import post_save
+from django.db.models import Avg, Max, Min
 
 # import datetime as dt
 # from django.contrib.auth.models import User
