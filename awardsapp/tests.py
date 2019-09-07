@@ -18,3 +18,10 @@ class tagsTestClass(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.test_tags, tags))
+        
+    # Testing Save method
+
+    def test_save_method(self):
+        tags = tags.objects.create(name='funny')
+        tags = tags.objects.all()
+        self.assertTrue(len(tags) > 0)
