@@ -13,3 +13,8 @@ class tagsTestClass(TestCase):
     def setUp(self):
         self.test_tags = tags(name='funny')
         self.test_tags.save()
+        
+     # Testing instance
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.test_tags, tags))
