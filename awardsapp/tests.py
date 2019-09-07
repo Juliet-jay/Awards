@@ -25,3 +25,7 @@ class tagsTestClass(TestCase):
         tags = tags.objects.create(name='funny')
         tags = tags.objects.all()
         self.assertTrue(len(tags) > 0)
+        
+    # Tear down method
+    def tearDown(self):
+        tags.objects.all().delete()
