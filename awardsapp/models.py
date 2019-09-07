@@ -6,33 +6,33 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.db.models import Avg, Max, Min
 
-# import datetime as dt
-# from django.contrib.auth.models import User
-# # Create your models here.
-# class tags(models.Model):
-#     name = models.CharField(max_length=30)
+import datetime as dt
+from django.contrib.auth.models import User
+# Create your models here.
+class tags(models.Model):
+    name = models.CharField(max_length=30)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
-#     def save_tags(self):
-#         self.save()
+    def save_tags(self):
+        self.save()
 
-#     def delete_tags(self):
-#         self.delete()
+    def delete_tags(self):
+        self.delete()
         
-# class Location(models.Model):
-#     name = models.CharField(max_length=30)
+class Location(models.Model):
+    name = models.CharField(max_length=30)
 
 
-#     def save_location(self):
-#         self.save()
+    def save_location(self):
+        self.save()
 
-#     def delete_location(self):
-#         self.delete()
+    def delete_location(self):
+        self.delete()
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 
 # class Project(models.Model):
