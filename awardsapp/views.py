@@ -20,31 +20,31 @@ from .models import Image,Location,tags, Profile, Review, NewsLetterRecipients, 
 
 
 
-# @login_required(login_url='/accounts/login/')
-# def home_projects (request):
-#     # Display all projects here:
+@login_required(login_url='/accounts/login/')
+def home_projects (request):
+    # Display all projects here:
 
-#     if request.GET.get('search_term'):
-#         projects = Project.search_project(request.GET.get('search_term'))
+    if request.GET.get('search_term'):
+        projects = Project.search_project(request.GET.get('search_term'))
 
-#     else:
-#         projects = Project.objects.all()
+    else:
+        projects = Project.objects.all()
 
-#     form = NewsLetterForm
+    form = NewsLetterForm
 
-#     if request.method == 'POST':
-#         form = NewsLetterForm(request.POST or None)
-#         if form.is_valid():
-#             name = form.cleaned_data['your_name']
-#             email = form.cleaned_data['email']
+    if request.method == 'POST':
+        form = NewsLetterForm(request.POST or None)
+        if form.is_valid():
+            name = form.cleaned_data['your_name']
+            email = form.cleaned_data['email']
 
-#             recipient = NewsLetterRecipients(name=name, email=email)
-#             recipient.save()
-#             send_welcome_email(name, email)
+            recipient = NewsLetterRecipients(name=name, email=email)
+            recipient.save()
+            send_welcome_email(name, email)
 
-#             HttpResponseRedirect('home_projects')
+            HttpResponseRedirect('home_projects')
 
-#     return render(request, 'index.html', {'projects':projects, 'letterForm':form})
+    return render(request, 'index.html', {'projects':projects, 'letterForm':form})
 
 # def project(request, id):
 
