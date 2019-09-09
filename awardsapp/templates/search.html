@@ -1,17 +1,17 @@
 {%extends 'base.html'%} {% block content %}
-<div class="container"style="text-align: center; background-image: url('https://i.pinimg.com/originals/ad/74/e4/ad74e4968fa447ed2c8284820f656b72.jpg') >
+<div class="container"style="text-align: center; background-image: url('https://i.pinimg.com/originals/ad/74/e4/ad74e4968fa447ed2c8284820f656b72.jpg')" >
 
-  <div class="row">
-    {% if profiles %}
-    <h2 style="font-family: 'Kodchasan', sans-serif;color:white;"> Here are profiles of your search term: {{message}}</h2>
+<div class="row">
+    {% if projects %}
+    <h2 style="font-family: 'Kodchasan', sans-serif;color:white;"> Here are projects of your search term: {{message}}</h2>
     {% else %}
-    <h2 style="font-family: 'Kodchasan', sans-serif;color:white;"> It appears that there are 0 profiles for your search term
+    <h2 style="font-family: 'Kodchasan', sans-serif;color:white;"> 
       {{message}}, please try again. </h2>
     {% endif %}
 
   </div>
 
-  <h1 style="font-family: 'Dosis', sans-serif;"><strong> These are the projects found </strong></h1>
+  {% comment %} <h1 style="font-family: 'Dosis', sans-serif;"><strong> These are the projects found </strong></h1> {% endcomment %}
 
   {% for profile in profiles %}
   <p style="font-family: 'Dosis', sans-serif;"><a href="{% url 'individual_profile_page' profile.user.id %}"> {{profile.user.username}}</a></p>
@@ -28,8 +28,21 @@
         {% for project in projects %}
         <div class="card border-secondary">
           {% comment %} <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage"
-            size="100px200"> {% endcomment %}
-        </div>
+            size="100px200"> {% endcomment %}'
+             <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid"
+          id="eachimage1" size="100px200">
+            <div class="card border-secondary w-33"><a href="{% url 'project' project.id %}"></a>
+
+                
+            <p style="font-family: 'Dosis', sans-serif; text-align:center;"> {{ project.description}}</p>
+            <p style="font-family: 'Dosis', sans-serif; text-align:center;"> {{ project.user.username}}</p>
+            <span class="btn btn danger" style="font-family: 'Dosis', sans-serif;">
+            <a href="{{ project.project_url}}">Visit Site</a></span>
+            <span class="badge badge-pill badge-danger" style="font-family: 'Dosis', sans-serif; text-align:center;">Like</span>
+        <span class="btn btn danger" style="font-family: 'Dosis', sans-serif; text-align:center;"><a href="{% url 'project' project.id %}">View Project</a></span>
+
+            </div>
+                </div>
         {% endfor %}
       </div>
     </div>

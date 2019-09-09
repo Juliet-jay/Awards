@@ -152,8 +152,8 @@ def individual_profile_page(request, username=None):
 def search_projects(request):
 
     # search for a user by their username
-    if 'project' in request.GET and request.GET["project"]:
-        search_term = request.GET.get("project")
+    if 'project' in request.GET and request.GET['project']:
+        search_term = request.GET.get('project')
         searched_projects = Project.search_projects(search_term)
         message = f"{search_term}"
 
@@ -165,18 +165,18 @@ def search_projects(request):
 
 # Search for an image
 def search_image(request):
+    
+    # search for an image by the description of the image
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_image(search_term)
+        message = f"{search_term}"
 
-        # search for an image by the description of the image
-        if 'image' in request.GET and request.GET["image"]:
-            search_term = request.GET.get("image")
-            searched_images = Image.search_image(search_term)
-            message = f"{search_term}"
+        return render(request, 'search.html', {"message": message, "pictures": searched_images})
 
-            return render(request, 'search.html', {"message": message, "pictures": searched_images})
-
-        else:
-            message = "You haven't searched for any image"
-            return render(request, 'search.html', {"message": message})
+    else:
+        message = "You haven't searched for any image"
+        return render(request, 'search.html', {"message": message})
 
 
 
