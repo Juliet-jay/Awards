@@ -1,5 +1,5 @@
 {%extends 'base.html'%} {% block content %}
-<div class="container">
+<div class="container"style="text-align: center; background-image: url('https://i.pinimg.com/originals/ad/74/e4/ad74e4968fa447ed2c8284820f656b72.jpg') >
 
   <div class="row">
     {% if profiles %}
@@ -27,8 +27,8 @@
 
         {% for project in projects %}
         <div class="card border-secondary">
-          <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage"
-            size="100px200">
+          {% comment %} <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage"
+            size="100px200"> {% endcomment %}
         </div>
         {% endfor %}
       </div>
@@ -44,18 +44,7 @@
     <div class="col-md-12">
       <div class="footer text-center">
         <ul id="footer1">
-          <li>ABOUT US</li>
-          <li>SUPPORT</li>
-          <li>PRESS</li>
-          <li>API</li>
-          <li>JOBS</li>
-          <li>PRIVACY</li>
-          <li>TERMS</li>
-          <li>DIRECTORY</li>
-          <li>PROFILES</li>
-          <li>HASHTAGS</li>
-          <li>LANGUAGE</li>
-          <br>
+    
 
           <li style="font-size:10px;"> <strong>© 2019 JULIE K</strong></li>
         </ul>

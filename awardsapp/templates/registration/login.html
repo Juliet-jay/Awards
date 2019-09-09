@@ -1,12 +1,13 @@
 {% extends 'registration/base.html'%} {% load bootstrap3 %} {% load static %} {% block content %}
-<div class="container" style="background-color:#fff;">
+<body style="background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZwXTSQXLceaC0b5bV9umcwgRLSYzsMq1WuYLymZnKzF2jo3Blg');background-repeat:no repeat:">
+<div class="container" style="background-image : url(''">
   <div class="row p-0 m-0">
     <div class="col-md-6 mt-5">
       {% if form.errors %}
       <p> Password or Username is incorrect </p>
       {% endif %}
 
-      <img class="thumbnail" src="{% static 'photos/gosh-her-voice-is-too-monotone.jpg' %}" style="height:500px;width:450px;">
+      {% comment %} <img class="thumbnail" src="{% static 'photos/gosh-her-voice-is-too-monotone.jpg' %}" style="height:500px;width:450px;"> {% endcomment %}
 
 
     </div>
@@ -19,7 +20,7 @@
 
         <div class="card-header text-center">
           <h1 class="h1" style="font-family: 'Dosis', sans-serif; color:blue;font-size:65px;">AWARDS</h1>
-          <h3 class="text-center" style="color:grey;font-size:15px;font-family: 'Dosis', sans-serif;">Login to see photos and videos from your friends.</h3>
+          <h3 class="text-center" style="color:grey;font-size:15px;font-family: 'Dosis', sans-serif;">Login to see others people's projects.</h3>
         </div>
         <div class="card-body text-primary">
           <form action="/accounts/login/" method="post" style="font-family: 'Dosis', sans-serif; " >
@@ -57,9 +58,9 @@
       <div class="card mt-5" style="width: 28rem;">
         <div class="card-body text-center">
           <h5 class="card-title" style="font-family: 'Dosis', sans-serif;" >Get the app.</h5>
-          <a href="https://itunes.apple.com/ke/app/instagram/id389801252?mt=8"><img src="{% static 'photos/disruptive-innovation.jpg' %}"
+          {% comment %} <a href="https://itunes.apple.com/ke/app/instagram/id389801252?mt=8"><img src="{% static 'photos/disruptive-innovation.jpg' %}"
               style="height:90px;width:200px;"></a>
-          <a href="https://play.google.com/store?hl=en"><img src="{% static 'photos/food-blogging.jpg' %}" style="height:90px;width:200px;"></a>
+          <a href="https://play.google.com/store?hl=en"><img src="{% static 'photos/food-blogging.jpg' %}" style="height:90px;width:200px;"></a> {% endcomment %}
         </div>
 
       </div>
@@ -77,18 +78,7 @@
   <div class="col-md-12">
     <div class="footer text-center">
       <ul id="footer1">
-        <li>ABOUT US</li>
-        <li>SUPPORT</li>
-        <li>PRESS</li>
-        <li>API</li>
-        <li>JOBS</li>
-        <li>PRIVACY</li>
-        <li>TERMS</li>
-        <li>DIRECTORY</li>
-        <li>PROFILES</li>
-        <li>HASHTAGS</li>
-        <li>LANGUAGE</li>
-        <br>
+        
         <li style="font-size:10px;"> <strong>© 2019 JULIE K</strong></li>
       </ul>
 
@@ -100,5 +90,6 @@
 
 
 </div>
+</body>
 
 {% endblock %}

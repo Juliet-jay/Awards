@@ -2,10 +2,10 @@
 {% load bootstrap3 %}
 {% load static %}
 {% block content %}
+<body style="background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZwXTSQXLceaC0b5bV9umcwgRLSYzsMq1WuYLymZnKzF2jo3Blg');background-repeat:no repeat:">
 <link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
 
-<div class="container">
-
+{% comment %} <div class="container" style="text-align: center; background-image: url('https://previews.123rf.com/images/neirfy/neirfy1702/neirfy170200441/73747674-feminine-workspace-with-empty-ruled-notebook-hand-writting-in-it-coffee-flowers-and-laptop-keyboard.jpg'); background-repeat ;"> {% endcomment %}
   <div class="jumbotron text-center mb-0" id="jumbo" style="background-color:white;">
 
     <h1 class="h1" style="font-family: 'Dosis', cursive; color:blue;font-size:70px;">Awards</h1>
@@ -18,16 +18,17 @@
 
   <div class="card-deck flex-wrap">
     {% for project in projects %}
-    <div class="card border-secondary w-33"><a href="{% url 'project' project.id %}">
+    <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid"
+          id="eachimage1" size="100px200">
+    <div class="card border-secondary w-33"><a href="{% url 'project' project.id %}"></a>
 
-        <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid"
-          id="eachimage1" size="100px200"></a>
+         
       <p style="font-family: 'Dosis', sans-serif; text-align:center;"> {{ project.description}}</p>
      <p style="font-family: 'Dosis', sans-serif; text-align:center;"> {{ project.user.username}}</p>
-     <span class="badge badge-pill badge-info" style="font-family: 'Dosis', sans-serif;">
+     <span class="btn btn danger" style="font-family: 'Dosis', sans-serif;">
        <a href="{{ project.project_url}}">Visit Site</a></span>
       <span class="badge badge-pill badge-danger" style="font-family: 'Dosis', sans-serif; text-align:center;">Like</span>
-  <span class="badge badge-pill badge-warning" style="font-family: 'Dosis', sans-serif; text-align:center;"><a href="{% url 'project' project.id %}">View Project</a></span>
+  <span class="btn btn danger" style="font-family: 'Dosis', sans-serif; text-align:center;"><a href="{% url 'project' project.id %}">View Project</a></span>
 
     </div>
     {% endfor %}
@@ -50,26 +51,16 @@
   <div class="col-md-12">
     <div class="footer text-center">
       <ul id="footer1">
-        <li>ABOUT US</li>
-        <li>SUPPORT</li>
-        <li>PRESS</li>
-        <li>API</li>
-        <li>JOBS</li>
-        <li>PRIVACY</li>
-        <li>TERMS</li>
-        <li>DIRECTORY</li>
-        <li>PROFILES</li>
-        <li>HASHTAGS</li>
-        <li>LANGUAGE</li>
-        <br>
+        
+        
 
         <li style="font-size:10px;"> <strong>© 2019 JULIE K</strong></li>
       </ul>
     </div>
   </div>
-</div>
 
 {% endblock %} {% block scripts %} {{block.super}}
 <script type="text/javascript" src="{%static 'js/scripts.js'%}"></script>
+</body>
 
 {% endblock %}

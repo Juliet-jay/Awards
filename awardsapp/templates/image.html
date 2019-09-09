@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% load static %} {% load bootstrap3%} {% block content %}
+<body style="background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZwXTSQXLceaC0b5bV9umcwgRLSYzsMq1WuYLymZnKzF2jo3Blg');background-repeat:no repeat:">
+<link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
+
+{% comment %} <div class="container" style="text-align: center; background-image: url('https://previews.123rf.com/images/neirfy/neirfy1702/neirfy170200441/73747674-feminine-workspace-with-empty-ruled-notebook-hand-writting-in-it-coffee-flowers-and-laptop-keyboard.jpg'); background-repeat :"> {% endcomment %}
+
+  <div class="jumbotron text-center" style="background-color:white;">
+
+    <h1 class="h1" style="font-family: 'Dosis', cursive; color:blue;font-size:70px;">Awards</h1>
+
+
+  </div>
+</div>
+
+<div class="container">
+<div class="card mb-3" style="width:40rem;;">
+  {% comment %} <img class="card-img-top" src="{{project.project_image.url}}" alt="Card image cap" class="img-fluid" size="100px200"> {% endcomment %}
+  <div class="card-body">
+
+
+
+    <h5 class="card-title" style="font-family: 'Dosis', sans-serif;"><strong>Project Name:</strong>
+      <br>
+      {{project.title}}</h5>
+      <img src="{{project.project_image.url }}">
+    <p class="card-text" style="font-family: 'Dosis', sans-serif;"><strong>Description Of Project:</strong>
+      <br>
+      {{project.description}}</p>
+  </div>
+
+  <div class="card border-secondary">
+     <div class="card-header">
+     <h5 style="font-family: 'Dosis', sans-serif;"> Comments</h5>
+       </div>
+
+
+     <div class="card-body text-primary">
+<h4>
+        {{ review.project.title }}
+        </h4>
+    {% for review in latest_review_list %}
+    <div>
+
+        <p style="color:black; font-family: 'Dosis',sans-serif;">Comment by {{ review.user }}: {{ review.comment }}</p>
+    </div>
+
+
+    {% endfor %}
+
+          <h1 style="color:black;font-family: 'Dosis', sans-serif;">AVERAGE OF REVIEWS</h1>
+
+
+<h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_design | floatformat }} average rating of design)</h5>
+<h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_content | floatformat }} average rating of content)</h5>
+<h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_usability | floatformat }} average rating of usability)</h5>
+
+<h3 style="font-family: 'Dosis', sans-serif;">Add your comment</h3>
+  <hr>
+  <form action=""  method="post" style="font-family: 'Dosis',sans-serif;">
+    {%csrf_token%} {% bootstrap_form form %}
+      <input type="submit" class="btn btn-primary" value="Post">
+  </form>
+  <hr>
+
+</div>
+
+
+
+
+     </div>
+   </div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="col-md-12">
+      <div class="footer text-center">
+        <ul id="footer1">
+          
+        
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+  </body>
+{% endblock %}
