@@ -2,11 +2,11 @@
 {% load bootstrap3 %}
 {% load static %}
 {% block content %}
-<body style="background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZwXTSQXLceaC0b5bV9umcwgRLSYzsMq1WuYLymZnKzF2jo3Blg');background-repeat:no-repeat:">
+<body style="background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOvSnc5WClBMOwuunP8PriyTBHVoflEcor96UkTHJkiQShQ24y');background-repeat:no-repeat:">
 <link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
 
 {% comment %} <div class="container" style="text-align: center; background-image: url('https://previews.123rf.com/images/neirfy/neirfy1702/neirfy170200441/73747674-feminine-workspace-with-empty-ruled-notebook-hand-writting-in-it-coffee-flowers-and-laptop-keyboard.jpg'); background-repeat ;"> {% endcomment %}
-  <div class="jumbotron text-center mb-0" id="jumbo" style="background-color:white;">
+  <div class="jumbotron text-center mb-0" id="jumbo" style="background-color:transparent;">
 
     <h1 class="h1" style="font-family: 'Dosis', cursive; color:blue;font-size:70px;">Awards</h1>
     <p class="h1" style="font-family: 'Dosis', cursive; color:black;font-size:25px;">View projects, submit your own projects and have them reviewed.</p>
@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="jumbotron itson mb-3 ">
+<div class="jumbotron itson mb-3 " style="background-color:transparent">
 
   <div class="card-deck flex-wrap">
     {% for project in projects %}
@@ -37,7 +37,7 @@
 
 </div>
 
-<div class="jumbotron text-center mt-3" style="background-color:white;font-family: 'Dosis', sans-serif;">
+<div class="jumbotron text-center mt-3" style="background-color:transparent;font-family: 'Dosis', sans-serif;">
 
   <form action="{%url 'homePage'%}" method="post">
     {%csrf_token%} {% bootstrap_form letterForm %}
