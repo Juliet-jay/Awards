@@ -22,9 +22,9 @@ class tagsTestClass(TestCase):
     # Testing Save method
 
     def test_save_method(self):
-        tags = tags.objects.create(name='funny')
-        tags = tags.objects.all()
-        self.assertTrue(len(tags) > 0)
+        self.test_tags.save()
+        tagss = tags.objects.all()
+        self.assertTrue(len(tagss) > 0)
         
     # Tear down method
     def tearDown(self):
