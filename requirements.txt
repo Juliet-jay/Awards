@@ -7,7 +7,7 @@ django-bootstrap3==11.1.0
 django-bootstrap4==1.0.1
 django-heroku==0.3.1
 django-registration==2.4.1
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 gunicorn==19.9.0
 numpy==1.16.5
 Pillow==6.1.0
